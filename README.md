@@ -1,2 +1,65 @@
-# CS 587 Hyperparameter Optimization
- 
+# Ridge Regression for Diabetes Prediction
+
+This project implements Ridge Regression models for predicting diabetes using a specific dataset.
+
+## Project Structure
+
+The project has the following structure:
+
+- `datasets/`: Contains the dataset loading and preprocessing code.
+  - `diabetes_dataset.py`: Loads and preprocesses the diabetes dataset.
+
+- `models/`: Contains the implementation of the Ridge Regression models.
+  - `ridge_regression.py`: Implements the basic Ridge Regression model.
+  - `ridge_regression_hg.py`: Implements a hyperparameter-tuned Ridge Regression model.
+
+- `utils/`: Contains utility functions used in the project.
+  - `visualize.py`: Provides visualization functions for plotting model performance.
+
+- `tests/`: Contains unit tests for the models.
+  - `test_models.py`: Defines unit tests for the Ridge Regression models.
+
+- `img/`: Contains generated plots and visualizations.
+  - `lambda_vs_iterations_ridge_regression.png`: Plot of lambda value vs. number of iterations for Ridge Regression.
+  - `lambda_vs_val_loss_ridge_regression.png`: Plot of lambda value vs. validation loss for Ridge Regression.
+  - `val_loss_vs_iterations_ridge_regression.png`: Plot of validation loss vs. number of iterations for Ridge Regression.
+
+- `main.py`: The main script to run the Ridge Regression models and generate visualizations.
+
+## Dataset
+
+The project uses a diabetes dataset for training and evaluating the Ridge Regression models. The dataset is loaded and preprocessed using the code in `datasets/diabetes_dataset.py`.
+
+## Models
+
+The project includes two Ridge Regression models:
+
+1. Basic Ridge Regression: Implemented in `models/ridge_regression.py`, this model performs standard Ridge Regression on the diabetes dataset.
+
+2. Hyperparameter-tuned Ridge Regression: Implemented in `models/ridge_regression_hg.py`, this model uses hyperparameter tuning to optimize the Ridge Regression performance.
+
+## Visualizations
+
+The project generates visualizations to analyze the performance of the Ridge Regression models. The visualizations are created using the functions in `utils/visualize.py` and are saved in the `img/` directory.
+
+The generated visualizations include:
+
+- Lambda value vs. number of iterations for Ridge Regression
+- Lambda value vs. validation loss for Ridge Regression
+- Validation loss vs. number of iterations for Ridge Regression
+
+## Usage
+
+To run the project, execute the `main.py` script with the appropriate command-line arguments.
+
+To recreate the Ridge Regression model without hypergradient optimization, use the following command:
+
+```bash
+python main.py --model='normal' --lr=1e-5 --num_epochs=1000 --lambda_init=0.5
+```
+
+To recreate the Ridge Regression model with hypergradient optimization, use the following command:
+
+```bash
+python main.py --model='hg' --lr='1e-3' --num_epochs=15001 --lambda_init=0.5
+```

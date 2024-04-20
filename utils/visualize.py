@@ -1,3 +1,7 @@
+"""
+This module contains functions for visualizing the results of Ridge Regression and 
+Ridge Regression with Hypergradients.
+"""
 from matplotlib import pyplot as plt
 plt.style.use("fivethirtyeight")
 

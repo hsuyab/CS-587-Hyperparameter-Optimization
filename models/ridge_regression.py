@@ -15,7 +15,7 @@ class RidgeRegression(nn.Module):
             theta (torch.Tensor): The weight parameters of the model.
             lambda_ (float): The regularization parameter.
         """
-        super(RidgeRegression, self).__init__()
+        super().__init__()
         self.theta = nn.Parameter(theta)
         self.lambda_ = lambda_
 
@@ -45,7 +45,7 @@ class RidgeRegression(nn.Module):
         """
         if val:
             return 0.5 * (torch.norm(y_pred - y) ** 2)
-        else:
-            return 0.5 * (
+        
+        return 0.5 * (
                 torch.norm(y_pred - y) ** 2 + self.lambda_ * torch.norm(self.theta) ** 2
             )

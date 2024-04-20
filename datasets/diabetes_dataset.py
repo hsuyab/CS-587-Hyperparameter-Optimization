@@ -3,10 +3,18 @@
 import torch
 from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split
-from torch.utils.data import Dataset
 
 
 def load_diabetes_data():
+    """
+    Load the diabetes dataset from sklearn and split it into training and validation sets.
+
+    Returns:
+    - X_train (torch.Tensor): The training features.
+    - y_train (torch.Tensor): The training targets.
+    - X_val (torch.Tensor): The validation features.
+    - y_val (torch.Tensor): The validation targets.
+    """
     # Load diabetes dataset
     X, y = load_diabetes(return_X_y=True)
     # Split dataset into training and validation sets

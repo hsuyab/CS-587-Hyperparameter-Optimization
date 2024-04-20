@@ -14,6 +14,9 @@ class TestRidgeRegression(unittest.TestCase):
     Test class for RidgeRegression.
     """
     def test_forward_pass(self):
+        """
+        Test forward pass of RidgeRegression.
+        """
         theta = torch.randn(2, 1)  # Dx1
         X = torch.randn(2, 3)  # DxN
         model = RidgeRegression(theta, lambda_=0.1)

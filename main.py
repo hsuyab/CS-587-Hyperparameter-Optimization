@@ -41,12 +41,19 @@ args = parser.parse_args()
 
 
 def main():
-    # X_train, y_train, X_val, y_val = load_data()
+    """
+    Main function for ridge regression model.
+    
+    This function loads the diabetes dataset, initializes the ridge regression model,
+    and trains the model using either normal ridge regression or ridge regression with
+    hypergradient descent. It then plots the validation loss against the lambda values
+    for normal ridge regression and the validation loss against the iterations for
+    ridge regression with hypergradient descent.
+    """
     X_train, y_train, X_val, y_val = load_diabetes_data()
 
     # selecting the normal model
     if args.model == "normal":
-
         theta = torch.randn(X_train.shape[0], 1, requires_grad=True)
         lambda_vals = [0, 0.1, 1, 10, 100]
         # model = RidgeRegression(lambda_=args.lambda_init)

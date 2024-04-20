@@ -1,3 +1,6 @@
+"""
+This script implements Ridge Regression with Hypergradient Descent.
+"""
 import torch
 from torch import nn
 
@@ -6,8 +9,9 @@ class RidgeRegressionHG(nn.Module):
     """
     Ridge Regression with Hypergradient Descent.
 
-    This class implements Ridge Regression with Hypergradient Descent, which is a linear regression model
-    regularized by the L2 norm (ridge penalty). It uses hypergradient descent to optimize the regularization
+    This class implements Ridge Regression with Hypergradient Descent, 
+    which is a linear regression model regularized by the L2 norm (ridge penalty). 
+    It uses hypergradient descent to optimize the regularization
     parameter lambda.
 
     Args:
@@ -27,6 +31,14 @@ class RidgeRegressionHG(nn.Module):
         self.lambda_ = nn.Parameter(torch.tensor(lambda_, dtype=torch.float32))
 
     def forward(self, X, y):
+        """
+        Performs the forward pass of the ridge regression model.
+        Args:
+            X (torch.Tensor): The input features.
+            y (torch.Tensor): The target values.
+        Returns:
+            theta_star (torch.Tensor): The optimized model parameters.
+        """        
         return torch.matmul(
             torch.linalg.inv(
                 torch.matmul(X, X.T) + self.lambda_ * torch.eye(X.shape[0])

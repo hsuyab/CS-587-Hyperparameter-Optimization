@@ -63,7 +63,7 @@ def main():
             # initialize the model
             model = RidgeRegression(theta, lbd)
             # initialize the optimizer
-            optimizer = optim.Adam(model.parameters(), lr=args.lr)  # lr=1e-5
+            optimizer = optim.SGD(model.parameters(), lr=args.lr)  # lr=1e-5
 
             # train the model
             for _ in range(args.num_epochs):  # num_epochs=1000
@@ -79,7 +79,9 @@ def main():
             y_val_pred = model(X_val)
             val_loss = model.loss(y_val, y_val_pred, val=True)
             val_losses.append(val_loss.item())
-
+        #print the minimum lambda and the corresponding validation loss
+        print(f"Minimum validation loss: {min(val_losses)}")
+        print(f"Lambda value: {lambda_vals[val_losses.index(min(val_losses))]}")
         # plot the lambda vs validation loss
         plot_lambda_vs_val_loss(lambda_vals, val_losses)
     # selecting the model with hypergradients

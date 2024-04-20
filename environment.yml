@@ -89,8 +89,19 @@ dependencies:
   - xz=5.2.6=h775f41a_0
   - zstd=1.5.5=h829000d_0
   - pip:
+      - astroid==3.1.0
+      - black==24.4.0
+      - click==8.1.7
+      - dill==0.3.8
+      - isort==5.13.2
       - joblib==1.4.0
+      - mccabe==0.7.0
+      - mypy-extensions==1.0.0
+      - pathspec==0.12.1
+      - platformdirs==4.2.0
+      - pylint==3.1.0
       - scikit-learn==1.4.2
       - scipy==1.13.0
       - threadpoolctl==3.4.0
+      - tomlkit==0.12.4
 prefix: /usr/local/Caskroom/miniconda/base/envs/cshw5

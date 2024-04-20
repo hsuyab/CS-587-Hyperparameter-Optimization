@@ -47,4 +47,6 @@ class RidgeRegression(nn.Module):
         if val:
             return 0.5 * (torch.norm(y_pred - y) ** 2)
         else:
-            return 0.5 * (torch.norm(y_pred - y) ** 2 + self.lambda_ * torch.norm(self.theta) ** 2)
+            return 0.5 * (
+                torch.norm(y_pred - y) ** 2 + self.lambda_ * torch.norm(self.theta) ** 2
+            )

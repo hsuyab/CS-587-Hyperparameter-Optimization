@@ -90,7 +90,7 @@ def main():
         model = RidgeRegressionHG(lambda_=args.lambda_init)  # lambda_=0.5
         val_losses = []
         lambdas = []
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)  # lr=1e-3
+        optimizer = optim.SGD(model.parameters(), lr=args.lr)  # lr=1e-3
         for _ in tqdm(range(args.num_epochs)):  # num_epochs=15001
             optimizer.zero_grad()
             # Forward pass
@@ -101,7 +101,9 @@ def main():
             # do backpropagation on the loss
             loss.backward()
             optimizer.step()
-
+        #print the minimum validation loss and the corresponding lambda value
+        print(f"Minimum validation loss: {min(val_losses)}")
+        print(f"Lambda value: {lambdas[val_losses.index(min(val_losses))]}")
         # plot the loss vs iteration
         plot_loss_vs_iteration(val_losses)
         # plot the lambda vs iteration

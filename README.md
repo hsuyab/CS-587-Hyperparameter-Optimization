@@ -1,3 +1,4 @@
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 # Ridge Regression for Diabetes Prediction
 
 This project implements Ridge Regression models for predicting diabetes using a specific dataset.
@@ -120,3 +121,12 @@ To recreate the Ridge Regression model with hypergradient optimization, use the 
 ```bash
 python main.py --model='hg' --lr='1e-3' --num_epochs=15001 --lambda_init=0.5
 ```
+
+
+## Code Style
+
+This project adheres to the PEP 8 style guidelines and is formatted using the black code formatter. All Python files have been automatically formatted with black to ensure a consistent and readable code style throughout the project.
+
+To format the code using black, run the following command:
+```bash
+black .

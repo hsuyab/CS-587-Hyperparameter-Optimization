@@ -123,7 +123,7 @@ python main.py --model='hg' --lr='1e-3' --num_epochs=15001 --lambda_init=0.5
 ```
 
 
-## Code Style
+# Code Style
 
 This project adheres to the PEP 8 style guidelines and is formatted using the black code formatter. All Python files have been automatically formatted with black to ensure a consistent and readable code style throughout the project.
 

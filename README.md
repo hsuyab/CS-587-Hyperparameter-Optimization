@@ -43,13 +43,13 @@ The project includes two Ridge Regression models:
 
 The basic Ridge Regression model is implemented in `models/ridge_regression.py`. The model is trained on the diabetes dataset using standard Ridge Regression. The model is trained with the following hyperparameters:
 
-- Learning rate: 1e-5
-- Number of epochs: 1000
+- Learning rate: 3e-4
+- Number of epochs: 100
 
 To run the basic Ridge Regression model, use the following command:
 
 ```bash
-python main.py --model='normal' --lr=1e-5 --num_epochs=1000 
+python main.py --model='normal' --lr='3e-4' --num_epochs=100
 ```
 - The output image files will be saved in the `img/` directory as `img lambda_vs_val_loss_ridge_regression.png`
 
@@ -126,7 +126,7 @@ To run the project, execute the `main.py` script with the appropriate command-li
 To recreate the Ridge Regression model without hypergradient optimization, use the following command:
 
 ```bash
-python main.py --model='normal' --lr='1e-5' --num_epochs=1000
+python main.py --model='normal' --lr='3e-4' --num_epochs=100
 ```
 
 To recreate the Ridge Regression model with hypergradient optimization, use the following command:

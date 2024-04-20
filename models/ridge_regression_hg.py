@@ -1,5 +1,5 @@
 import torch
-import torch.nn as nn
+from torch import nn
 
 
 class RidgeRegressionHG(nn.Module):
@@ -35,5 +35,16 @@ class RidgeRegressionHG(nn.Module):
         )
 
     def loss(self, y_val, X, theta):
+        """
+        Calculates the mean squared error (MSE) loss for ridge regression.
+
+        Parameters:
+        - y_val (torch.Tensor): The target values.
+        - X (torch.Tensor): The input features.
+        - theta (torch.Tensor): The model parameters.
+
+        Returns:
+        - mse_loss (torch.Tensor): The calculated MSE loss.
+        """
         mse_loss = 0.5 * (torch.norm(y_val - X.T @ theta) ** 2)
         return mse_loss

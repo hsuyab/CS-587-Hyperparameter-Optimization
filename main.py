@@ -2,9 +2,7 @@
 
 import argparse
 import torch
-import torch.nn as nn
-import torch.optim as optim
-import matplotlib.pyplot as plt
+from torch import optim
 from tqdm import tqdm
 
 # from datasets import load_diabetes_data
@@ -61,7 +59,7 @@ def main():
             optimizer = optim.Adam(model.parameters(), lr=args.lr)  # lr=1e-5
 
             # train the model
-            for epoch in range(args.num_epochs):  # num_epochs=1000
+            for _ in range(args.num_epochs):  # num_epochs=1000
                 model.train()
                 y_pred = model(X_train)
                 loss = model.loss(y_train, y_pred)
@@ -84,7 +82,7 @@ def main():
         val_losses = []
         lambdas = []
         optimizer = optim.Adam(model.parameters(), lr=args.lr)  # lr=1e-3
-        for epoch in tqdm(range(args.num_epochs)):  # num_epochs=15001
+        for _ in tqdm(range(args.num_epochs)):  # num_epochs=15001
             optimizer.zero_grad()
             # Forward pass
             theta_star = model(X_train, y_train)

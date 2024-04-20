@@ -2,6 +2,63 @@
 
 This project implements Ridge Regression models for predicting diabetes using a specific dataset.
 
+## Setup and Installation
+
+To install the dependencies for the project, run the following command:
+
+```bash
+conda create -n cshw5 python=3.11.9
+conda activate cshw5
+pip install -r requirements.txt
+```
+OR 
+
+```bash
+conda env create -f environment.yml
+conda activate cshw5
+```
+
+# Experiments
+
+The project includes two Ridge Regression models: 
+- a basic Ridge Regression model
+- a hyperparameter-tuned Ridge Regression model. 
+
+## Basic Ridge Regression Model
+
+The basic Ridge Regression model is implemented in `models/ridge_regression.py`. The model is trained on the diabetes dataset using standard Ridge Regression. The model is trained with the following hyperparameters:
+
+- Learning rate: 1e-5
+- Number of epochs: 1000
+- Initial lambda value: 0.5
+
+To run the basic Ridge Regression model, use the following command:
+
+```bash
+python main.py --model='normal' --lr=1e-5 --num_epochs=1000 --lambda_init=0.5
+```
+- The output image files will be saved in the `img/` directory as `img lambda_vs_val_loss_ridge_regression.png`
+
+
+
+## Hyperparameter-Tuned Ridge Regression Model
+
+The hyperparameter-tuned Ridge Regression model is implemented in `models/ridge_regression_hg.py`. The model uses hypergradient optimization to find the optimal lambda value for Ridge Regression. The model is trained with the following hyperparameters:
+
+- Learning rate: 1e-3
+- Number of epochs: 15001
+- Initial lambda value: 0.5
+
+To run the hypergradient based Ridge Regression model, use the following command:
+
+```bash
+python main.py --model='hg' --lr='1e-3' --num_epochs=15001 --lambda_init=0.5
+```
+
+- The output image files will be saved in the `img/` directory as `img/val_loss_vs_iterations_ridge_regression.png` and `img/lambda_vs_iterations_ridge_regression.png`
+
+
+
 ## Project Structure
 
 The project has the following structure:

@@ -1,0 +1,30 @@
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1707022139797/work/certifi
+colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1666700638685/work
+contourpy @ file:///Users/runner/miniforge3/conda-bld/contourpy_1712429955973/work
+cycler @ file:///home/conda/feedstock_root/build_artifacts/cycler_1696677705766/work
+filelock @ file:///home/conda/feedstock_root/build_artifacts/filelock_1712686151958/work
+fonttools @ file:///Users/runner/miniforge3/conda-bld/fonttools_1712344643336/work
+fsspec @ file:///home/conda/feedstock_root/build_artifacts/fsspec_1710808267764/work
+gmpy2 @ file:///Users/runner/miniforge3/conda-bld/gmpy2_1666808689326/work
+Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/jinja2_1704966972576/work
+joblib==1.4.0
+kiwisolver @ file:///Users/runner/miniforge3/conda-bld/kiwisolver_1695379978135/work
+MarkupSafe @ file:///Users/runner/miniforge3/conda-bld/markupsafe_1706899980634/work
+matplotlib @ file:///Users/runner/miniforge3/conda-bld/matplotlib-suite_1712605954580/work
+mpmath @ file:///home/conda/feedstock_root/build_artifacts/mpmath_1678228039184/work
+munkres==1.1.4
+networkx @ file:///home/conda/feedstock_root/build_artifacts/networkx_1712540363324/work
+numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1707225620241/work/dist/numpy-1.26.4-cp311-cp311-macosx_10_9_x86_64.whl#sha256=0c694e57489122e5217f1154a05d3d7dd11011371f482a0bcd7692bad5da2ca0
+packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1710075952259/work
+pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1712154521990/work
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/pyparsing_1709721012883/work
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1709299778482/work
+scikit-learn==1.4.2
+scipy==1.13.0
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+sympy @ file:///home/conda/feedstock_root/build_artifacts/sympy_1684180540116/work
+threadpoolctl==3.4.0
+torch @ file:///Users/runner/miniforge3/conda-bld/libtorch_1711322685759/work/torch-2.1.2.post103-cp311-cp311-macosx_10_13_x86_64.whl#sha256=89e573b9f350f2187d4b844b9af7b08b18c3e2a3ce468225a1ed992ea724e88b
+tornado @ file:///Users/runner/miniforge3/conda-bld/tornado_1708363156459/work
+tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1707598593068/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1712329955671/work

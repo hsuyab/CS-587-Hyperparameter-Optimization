@@ -15,6 +15,7 @@ def plot_lambda_vs_val_loss(lambda_vals, val_losses):
         lambda_vals (list or numpy.ndarray): List or array of lambda values.
         val_losses (list or numpy.ndarray): List or array of validation losses.
     """
+    plt.figure(figsize=(10, 8))
     plt.plot(lambda_vals, val_losses)
     plt.xlabel("Lambda")
     plt.ylabel("Validation Loss")
@@ -31,7 +32,7 @@ def plot_loss_vs_iteration(val_losses):
     Args:
         val_losses (list or numpy.ndarray): List or array of validation losses.
     """
-    plt.figure()
+    plt.figure(figsize=(10, 8))
     plt.plot(val_losses)
     plt.xlabel("Iteration")
     plt.ylabel("Validation Loss")
@@ -50,7 +51,7 @@ def plot_lambda_vs_iteration(lambdas):
         model_type (str): Type of Ridge Regression model.
     """
 
-    plt.figure()
+    plt.figure(figsize=(10, 8))
     plt.plot(lambdas)
     plt.xlabel("Iteration")
     plt.ylabel("Lambda")

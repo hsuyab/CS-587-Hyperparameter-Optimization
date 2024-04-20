@@ -103,7 +103,7 @@ def main():
         # plot the loss vs iteration
         plot_loss_vs_iteration(val_losses)
         # plot the lambda vs iteration
-        plot_lambda_vs_iteration(lambdas, "Ridge Regression")
+        plot_lambda_vs_iteration(lambdas)
 
 
 if __name__ == "__main__":

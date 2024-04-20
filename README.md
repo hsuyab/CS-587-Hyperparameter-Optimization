@@ -59,14 +59,14 @@ python main.py --model='normal' --lr='3e-4' --num_epochs=100
 
 The hyperparameter-tuned Ridge Regression model is implemented in `models/ridge_regression_hg.py`. The model uses hypergradient optimization to find the optimal lambda value for Ridge Regression. The model is trained with the following hyperparameters:
 
-- Learning rate: 1e-3
-- Number of epochs: 15001
+- Learning rate: 3e-4
+- Number of epochs: 100
 - Initial lambda value: 0.5
 
 To run the hypergradient based Ridge Regression model, use the following command:
 
 ```bash
-python main.py --model='hg' --lr='1e-3' --num_epochs=15001 --lambda_init=0.5
+python main.py --model='hg' --lr='3e-4' --num_epochs=100 --lambda_init=0.5
 ```
 
 - The output image files will be saved in the `img/` directory as `img/val_loss_vs_iterations_ridge_regression.png` and `img/lambda_vs_iterations_ridge_regression.png`
@@ -132,7 +132,7 @@ python main.py --model='normal' --lr='3e-4' --num_epochs=100
 To recreate the Ridge Regression model with hypergradient optimization, use the following command:
 
 ```bash
-python main.py --model='hg' --lr='1e-3' --num_epochs=15001 --lambda_init=0.5
+python main.py --model='hg' --lr='3e-4' --num_epochs=100 --lambda_init=0.5
 ```
 
 

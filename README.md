@@ -126,11 +126,7 @@ To run the project, execute the `main.py` script with the appropriate command-li
 To recreate the Ridge Regression model without hypergradient optimization, use the following command:
 
 ```bash
-<<<<<<< HEAD
-python main.py --model='normal' --lr='3e-4' --num_epochs=100
-=======
 python main.py --model='normal' --lr='1e-5' --num_epochs=1000 --lambda_init=0.5
->>>>>>> parent of 2b793e4 (updated codes)
 ```
 
 To recreate the Ridge Regression model with hypergradient optimization, use the following command:

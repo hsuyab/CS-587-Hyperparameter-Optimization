@@ -45,12 +45,11 @@ The basic Ridge Regression model is implemented in `models/ridge_regression.py`.
 
 - Learning rate: 1e-5
 - Number of epochs: 1000
-- Initial lambda value: 0.5
 
 To run the basic Ridge Regression model, use the following command:
 
 ```bash
-python main.py --model='normal' --lr=1e-5 --num_epochs=1000 --lambda_init=0.5
+python main.py --model='normal' --lr=1e-5 --num_epochs=1000 
 ```
 - The output image files will be saved in the `img/` directory as `img lambda_vs_val_loss_ridge_regression.png`
 

@@ -1,4 +1,6 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+![Pylint](https://github.com/your-username/your-repository/workflows/Pylint/badge.svg)
 # Ridge Regression for Diabetes Prediction
 
 This project implements Ridge Regression models for predicting diabetes using a specific dataset.

@@ -4,7 +4,7 @@ import argparse
 import torch
 from torch import optim
 from tqdm import tqdm
-
+from torch import nn
 # from datasets import load_diabetes_data
 from datasets.diabetes_dataset import load_diabetes_data
 from models.ridge_regression import RidgeRegression
@@ -54,34 +54,47 @@ def main():
 
     # selecting the normal model
     if args.model == "normal":
-        theta = torch.randn(X_train.shape[0], 1, requires_grad=True)
-        lambda_vals = [0, 0.1, 1, 10, 100]
-        # model = RidgeRegression(lambda_=args.lambda_init)
-        val_losses = []
-        # doing grid search for different lambda values
-        for lbd in lambda_vals:
-            # initialize the model
-            model = RidgeRegression(theta, lbd)
-            # initialize the optimizer
-            optimizer = optim.Adam(model.parameters(), lr=args.lr)  # lr=1e-5
+        # Set the range of lambda values to search
+        lambdas = [0, 0.1, 1, 10, 100]
 
-            # train the model
-            for _ in range(args.num_epochs):  # num_epochs=1000
-                model.train()
-                y_pred = model(X_train)
-                loss = model.loss(y_train, y_pred)
+        # Perform grid search for different lambda values
+        val_losses = []
+        for lam in lambdas:
+            # Create a new model instance for each lambda value
+            model = RidgeRegression(input_dim=X_train.T.shape[1])
+
+            # Define the loss function and optimizer
+            criterion = nn.MSELoss()
+            optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+
+            # Training loop
+            num_epochs = 100
+            for epoch in range(num_epochs):
+                # Forward pass
+                outputs = model(X_train.T)
+                loss = criterion(outputs, y_train)
+
+                # Add L2 regularization term to the loss
+                l2_reg = torch.tensor(0.)
+                for param in model.parameters():
+                    l2_reg += torch.norm(param, p=2)
+                loss += lam * l2_reg
+
+                # Backward pass and optimization
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
 
-            # evaluate the model
-            model.eval()
-            y_val_pred = model(X_val)
-            val_loss = model.loss(y_val, y_val_pred, val=True)
-            val_losses.append(val_loss.item())
-
+            # Evaluate the model on the validation set
+            with torch.no_grad():
+                val_outputs = model(X_val.T)
+                val_loss = criterion(val_outputs, y_val)
+                val_losses.append(val_loss.item())        
+        #print the lamba with minimum validation loss
+        print("Lambda with minimum validation loss: ", lambdas[val_losses.index(min(val_losses))])
         # plot the lambda vs validation loss
-        plot_lambda_vs_val_loss(lambda_vals, val_losses)
+        plot_lambda_vs_val_loss(lambdas, val_losses)
+
     # selecting the model with hypergradients
     if args.model == "hg":
 
